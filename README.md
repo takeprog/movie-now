@@ -1,24 +1,66 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| nickname           | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :movie
+- has_many :likes
+- has_many :liked_movies, through::likes, source::movie
 
-* Configuration
+## movies テーブル
 
-* Database creation
+| Column            | Type       | Options                        |
+| ----------------- | ---------- | ------------------------------ |
+| movie_name        | string     | null: false                    |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
+- has_many :likes
+- has_many :liked_users, through::likes, source::user
+- has_many :tags, through::tag_maps
 
-* Services (job queues, cache servers, search engines, etc.)
+## tags テーブル
 
-* Deployment instructions
+| Column                | Type       | Options |
+| --------------------- | ---------- | ------- |
+| actor_tag             | string     |         |
+| genre_tag             | string     |         |
+| distribution_site_tag | string     |         |
+| other_tag             | string     |         |
 
-* ...
+### Association
+
+- has_many :tag_maps
+- has_many :movies, through::tag_maps
+
+## likes テーブル
+
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| user             | references | null: false, foreign_key: true |
+| movie            | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :movie
+
+## tag_maps テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| movie  | references | null: false, foreign_key: true | 
+| tag    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :movie
+- belongs_to :tag
