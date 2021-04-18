@@ -9,5 +9,5 @@
 </ul>
 
 <% if user_signed_in? && current_user.admin? %>
-  <%= link_to '管理者画面', '#', class: "adminpage" %></li>
+  <%= link_to '管理者画面', new_movie_path, class: "adminpage" %></li>
 <% end %>
