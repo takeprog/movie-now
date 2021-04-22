@@ -1,12 +1,33 @@
 <ul class='lists-right'>
   <% if user_signed_in? %>
-    <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+    <li><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %></li>
     <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
   <% else %>
     <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
     <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
   <% end %>
 </ul>
+
+<h1>
+  映画検索
+</h1>
+<%= search_form_for @p, url: search_movies_path do |f| %>
+  
+  <%= f.label :tag_maps_tag_id_eq, '出演者：' %>
+  <%= f.collection_check_boxes :having_all_tags_of, @actor_tags, :id, :actor_tag %>
+  <br>
+  <%= f.label :tag_maps_tag_id_eq, 'ジャンル：' %>
+  <%= f.collection_check_boxes :having_all_tags_of, @genre_tags, :id, :genre_tag %>
+  <br>
+  <%= f.label :tag_maps_tag_id_eq, '配信サイト：' %>
+  <%= f.collection_check_boxes :having_all_tags_of, @distribution_tags, :id, :distribution_site_tag %>
+  <br>
+  <%= f.label :tag_maps_tag_id_eq, 'その他：' %>
+  <%= f.collection_check_boxes :having_all_tags_of, @other_tags, :id, :other_tag %>
+
+  <br>
+  <%= f.submit '検索' %>
+<% end %>
 
 <% if user_signed_in? && current_user.admin? %>
   <%= link_to '管理者画面', new_movie_path, class: "adminpage" %></li>

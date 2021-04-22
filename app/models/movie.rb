@@ -43,4 +43,20 @@ class Movie < ApplicationRecord
     end
   end
 
+
+  # タグ検索時scope
+  scope :having_all_tags_of, ->(*tag_ids) {
+    where(id: TagMap.select(:movie_id)
+      .where(tag_id: tag_ids)
+      .group( :movie_id )
+      .having("COUNT(DISTINCT tag_maps.tag_id) = ?", (tag_ids.size-4))
+    )
+  }
+
+  private
+
+   def self.ransackable_scopes(auth_object = nil)
+     %i(having_all_tags_of)
+   end  
+   
 end

@@ -1,0 +1,16 @@
+<h1>
+  検索結果
+</h1>
+<% if @results != nil %>
+  <% @results.each do |result| %>
+    <td>
+    <br>
+    <li>
+      <%= link_to result.movie_name,  movie_path(result.id) %>
+    </li>
+  <% end %>
+<% else %>
+  該当する商品はありません
+<% end %>
+<br>
+<%= link_to 'トップページへ戻る', root_path %>

@@ -1,12 +1,17 @@
 class MoviesController < ApplicationController
+  before_action :search_movie, only: [:index, :search]
 
   def index
+    @movies = Movie.all
+    @actor_tags=Tag.where.not(actor_tag: nil)
+    @genre_tags=Tag.where.not(genre_tag: nil)
+    @distribution_tags=Tag.where.not(distribution_site_tag: nil)
+    @other_tags=Tag.where.not(other_tag: nil)
   end
 
   def new
     @movie = Movie.new
   end
-
   def create
     @movie = Movie.new(movie_params)
     actor_tag_list = params[:movie][:actor_tag].split(",")
@@ -26,7 +31,21 @@ class MoviesController < ApplicationController
     end
   end
 
+  def search
+    @results=@p.result
+  end
+
+  def show
+    @movie = Movie.find(params[:id])
+  end
+
+
+
   private
+
+  def search_movie
+    @p = Movie.ransack(params[:q])
+  end
 
 
   def movie_params
