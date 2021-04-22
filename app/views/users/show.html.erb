@@ -2,4 +2,10 @@
   <p><%=  @nickname %>さんの映画コレクション</p>
 </div>
 
+<h3>いいねしている投稿</h3>
+<% @user.liked_movies.each do |movie| %>
+  <%= movie.movie_name %>
+<% end %>
+
+<br>
 <%= link_to 'トップページへ戻る', root_path %>

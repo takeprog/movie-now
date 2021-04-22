@@ -10,6 +10,7 @@
 
 ### Association
 
+- has_many :movies
 - has_many :likes
 - has_many :liked_movies, through: :likes, source::movie
 
@@ -21,6 +22,7 @@
 
 ### Association
 
+- belongs_to :user
 - has_many :likes
 - has_many :liked_users, through: :likes, source::user
 - has_many :tag_maps

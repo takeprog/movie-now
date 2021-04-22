@@ -1,6 +1,9 @@
 class Movie < ApplicationRecord
   has_many :tag_maps
   has_many :tags, through: :tag_maps
+  belongs_to :user
+  has_many :likes
+  has_many :liked_users, through: :likes, source: :user
 
   def actor_tags_save(tag_list)
     if self.tags != nil
