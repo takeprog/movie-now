@@ -59,3 +59,5 @@ gem 'devise'
 gem 'pry-rails'
 
 gem 'ransack'
+
+gem 'active_hash'

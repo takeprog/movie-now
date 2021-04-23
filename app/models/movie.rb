@@ -4,6 +4,7 @@ class Movie < ApplicationRecord
   belongs_to :user
   has_many :likes
   has_many :liked_users, through: :likes, source: :user
+  has_many :comments
 
   def actor_tags_save(tag_list)
     if self.tags != nil
@@ -55,6 +56,7 @@ class Movie < ApplicationRecord
       .having("COUNT(DISTINCT tag_maps.tag_id) = ?", (tag_ids.size-4))
     )
   }
+  
 
   private
 

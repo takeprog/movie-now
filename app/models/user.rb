@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :movies, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :liked_movies, through: :likes, source: :movie
+  has_many :comments
 
   def already_liked?(movie)
     self.likes.exists?(movie_id: movie.id)

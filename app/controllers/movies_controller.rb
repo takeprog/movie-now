@@ -38,6 +38,11 @@ class MoviesController < ApplicationController
   def show
     @movie = Movie.find(params[:id])
     @like = Like.new
+    @comment = Comment.new
+    # @comments = @movie.comments.includes(:user)
+    @good_comments = @movie.comments.where(genre_id: 2).includes(:user)
+    @bad_comments = @movie.comments.where(genre_id: 3).includes(:user)
+    @other_comments = @movie.comments.where(genre_id: 4).includes(:user)
   end
 
 
