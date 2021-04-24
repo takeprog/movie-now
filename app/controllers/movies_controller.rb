@@ -1,5 +1,9 @@
 class MoviesController < ApplicationController
   before_action :search_movie, only: [:index, :search]
+  require 'themoviedb-api'
+  Tmdb::Api.key(ENV["TMDB_API_KEY"])
+  Tmdb::Api.language("ja")
+
 
   def index
     @movies = Movie.all

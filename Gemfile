@@ -61,3 +61,5 @@ gem 'pry-rails'
 gem 'ransack'
 
 gem 'active_hash'
+
+gem 'themoviedb-api', '~> 1.3'
