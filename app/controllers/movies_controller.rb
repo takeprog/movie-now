@@ -11,6 +11,8 @@ class MoviesController < ApplicationController
     @genre_tags=Tag.where.not(genre_tag: nil)
     @distribution_tags=Tag.where.not(distribution_site_tag: nil)
     @other_tags=Tag.where.not(other_tag: nil)
+    @ranking=Movie.find(Like.group(:movie_id).order('count(movie_id) desc').limit(4).pluck(:movie_id))
+    @add_movie=Movie.order('created_at desc').limit(4)
   end
 
   def new

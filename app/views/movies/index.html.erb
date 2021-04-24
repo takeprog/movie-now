@@ -7,6 +7,28 @@
     <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
   <% end %>
 </ul>
+<div>
+  <h1>新規追加作品</h1>
+    <% @add_movie.each do |movie| %>
+    <%= link_to movie.movie_name,  movie_path(movie.id) %>
+    <% movieinfo = JSON.parse((Tmdb::Search.movie(movie.movie_name)).to_json) %>
+      <% if movieinfo['table']['results'].present? %>
+        <p><%= image_tag 'https://image.tmdb.org/t/p/w92' + movieinfo['table']['results'][0]['table']['poster_path'],class: "card-img" %></p>
+      <%end%>
+  <% end %>
+</div>
+<div>
+  <h1>ランキング<h1>
+   <% @ranking.each do |movie| %>
+    <%= link_to movie.movie_name,  movie_path(movie.id) %>
+    <% movieinfo = JSON.parse((Tmdb::Search.movie(movie.movie_name)).to_json) %>
+      <% if movieinfo['table']['results'].present? %>
+        <p><%= image_tag 'https://image.tmdb.org/t/p/w92' + movieinfo['table']['results'][0]['table']['poster_path'],class: "card-img" %></p>
+      <%end%>
+  <% end %>
+</div>
+
+
 
 <h1>
   映画検索

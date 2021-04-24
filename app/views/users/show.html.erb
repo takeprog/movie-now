@@ -5,7 +5,22 @@
 <h3>いいねしている投稿</h3>
 <% @user.liked_movies.each do |movie| %>
   <%= movie.movie_name %>
+  <% movieinfo = JSON.parse((Tmdb::Search.movie( movie.movie_name )).to_json) %>
+  <% if movieinfo['table']['results'].present? %>
+    <p><%= image_tag 'https://image.tmdb.org/t/p/w500' + movieinfo['table']['results'][0]['table']['poster_path'],class: "card-img" %></p>
+  <%end%>
+
+  
 <% end %>
+
+
+
+
+
+
+
+
+
 
 <br>
 <%= link_to 'トップページへ戻る', root_path %>

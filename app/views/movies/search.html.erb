@@ -7,6 +7,10 @@
     <br>
     <li>
       <%= link_to result.movie_name,  movie_path(result.id) %>
+      <% movieinfo = JSON.parse((Tmdb::Search.movie(result.movie_name)).to_json) %>
+      <% if movieinfo['table']['results'].present? %>
+        <p><%= image_tag 'https://image.tmdb.org/t/p/w500' + movieinfo['table']['results'][0]['table']['poster_path'],class: "card-img" %></p>
+      <%end%>
     </li>
   <% end %>
 <% else %>
