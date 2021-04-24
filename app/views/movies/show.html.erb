@@ -1,5 +1,7 @@
 <div>
   <%= @movie.movie_name %>
+  <% movieinfo = JSON.parse((Tmdb::Search.movie( @movie.movie_name)).to_json) %>
+  <p><%= image_tag 'https://image.tmdb.org/t/p/w1280' + movieinfo['table']['results'][0]['table']['poster_path'],class: "card-img" %></p>
 </div>
 
 
