@@ -1,5 +1,7 @@
 class MoviesController < ApplicationController
   before_action :search_movie, only: [:index, :search]
+  before_action :authenticate_user!, except: [:index, :search]
+  before_action :move_to_root,only: [:new, :create]
   require 'themoviedb-api'
   Tmdb::Api.key(ENV["TMDB_API_KEY"])
   Tmdb::Api.language("ja")
@@ -11,8 +13,8 @@ class MoviesController < ApplicationController
     @genre_tags=Tag.where.not(genre_tag: nil)
     @distribution_tags=Tag.where.not(distribution_site_tag: nil)
     @other_tags=Tag.where.not(other_tag: nil)
-    @ranking=Movie.find(Like.group(:movie_id).order('count(movie_id) desc').limit(4).pluck(:movie_id))
-    @add_movie=Movie.order('created_at desc').limit(4)
+    @ranking=Movie.find(Like.group(:movie_id).order('count(movie_id) desc').limit(5).pluck(:movie_id))
+    @add_movie=Movie.order('created_at desc').limit(5)
   end
 
   def new
@@ -28,7 +30,6 @@ class MoviesController < ApplicationController
     @movie.genre_tags_save(genre_tag_list)
     @movie.distribution_tags_save(distribution_tag_list)
     @movie.other_tags_save(other_tag_list)
-
     if @movie.valid?
       @movie.save    
       return redirect_to root_path
@@ -45,7 +46,6 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     @like = Like.new
     @comment = Comment.new
-    # @comments = @movie.comments.includes(:user)
     @good_comments = @movie.comments.where(genre_id: 2).includes(:user)
     @bad_comments = @movie.comments.where(genre_id: 3).includes(:user)
     @other_comments = @movie.comments.where(genre_id: 4).includes(:user)
@@ -64,6 +64,11 @@ class MoviesController < ApplicationController
     params.require(:movie).permit(:movie_name)
   end
 
+  def move_to_root
+    unless user_signed_in? && current_user.admin?
+      redirect_to root_path
+    end
+  end
   
 
 end

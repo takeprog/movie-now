@@ -1,29 +1,56 @@
-<%= form_with model: @movie, url: movies_path, class:'form-wrap', local: true do |f| %>
-  <div class='message-form'>
-    <div class="message-field">
-      <%= f.label :movie_name,  "映画名" %>
-      <%= f.text_area :movie_name, class:"input-message" %>
+<div class="second-header-block">
+  <%= render "shared/second-header" %>
+</div>
+
+<div class="post-movie">
+  <%= form_with model: @movie, url: movies_path, class:'post-main', local: true do |f| %>
+    <div class='form-wrap-add'>
+      <div class='form-header'>
+        <h1 class='form-header-text'>
+          追加作品情報入力
+        </h1>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <%= f.label :movie_name,  "映画名", class:"form-text" %>
+        </div>
+        <%= f.text_field :movie_name, class:"input-default" %>
+      </div>
+        
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <%= f.label :actor_tag, "出演者タグ", class:"form-text" %>
+        </div>
+        <%= f.text_area :actor_tag, placeholder:"例)#トトロ,#さつき,#めい", class:"input-default-add" %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <%= f.label :genre_tag, "ジャンルタグ", class:"form-text" %>
+        </div>
+        <%= f.text_area :genre_tag, placeholder:"例)#アニメ", class:"input-default-add" %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <%= f.label :distribution_site_tag, "配信サイトタグ", class:"form-text" %>
+        </div>
+        <%= f.text_area :distribution_site_tag, placeholder:"例)#Netflix", class:"input-default-add" %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <%= f.label :other_tag, "その他タグ", class:"form-text" %>
+        </div>
+        <%= f.text_area :other_tag, placeholder:"例)#ジブリ,#宮崎駿,#家族,#子供", class:"input-default-add" %>
+      </div>
+      <div class="warning">
+        <p>＊タグ名の先頭に「#」を付けて下さい。また、同じ枠内に複数のタグをつける際にはタグ間を「,」で区切ってください。</p>
+      </div>
+      <div class="register-btn">
+        <%= f.submit "作品追加", class: "register-red-btn" %>
+      </div>
     </div>
-    <div class="tag-field", id='tag-field'>
-      <%= f.label :actor_tag, "出演者タグ" %>
-      <%= f.text_field :actor_tag, placeholder:",で区切ってください", class:"input-tag" %>
-    </div>
-    <div class="tag-field", id='tag-field'>
-      <%= f.label :genre_tag, "ジャンルタグ" %>
-      <%= f.text_field :genre_tag, placeholder:",で区切ってください", class:"input-tag" %>
-    </div>
-    <div class="tag-field", id='tag-field'>
-      <%= f.label :distribution_site_tag, "配信サイトタグ" %>
-      <%= f.text_field :distribution_site_tag, placeholder:",で区切ってください", class:"input-tag" %>
-    </div>
-    <div class="tag-field", id='tag-field'>
-      <%= f.label :other_tag, "その他タグ" %>
-      <%= f.text_field :other_tag, placeholder:",で区切ってください", class:"input-tag" %>
-    </div>
-    <div id="search-result">
-    </div>
-  </div>
-  <div class="submit-post">
-    <%= f.submit "Send", class: "submit-btn" %>
-  </div>
-<% end %>
+  <% end %>
+</div>
+
+<div>
+  <%= render "shared/second-footer" %>
+</div>

@@ -1,68 +1,127 @@
-<div>
-  <%= @movie.movie_name %>
-  <% movieinfo = JSON.parse((Tmdb::Search.movie( @movie.movie_name)).to_json) %>
-  <% if movieinfo['table']['results'].present? %>
-    <p><%= image_tag 'https://image.tmdb.org/t/p/w500' + movieinfo['table']['results'][0]['table']['poster_path'],class: "card-img" %></p>
-  <%end%>
+<div class="second-header-block">
+  <%= render "shared/second-header" %>
 </div>
+<div class="movie-show">
+  <div class="show-top">
+    <div class="show-top-left">
+      <% movieinfo = JSON.parse((Tmdb::Search.movie( @movie.movie_name)).to_json) %>
+      <% if movieinfo['table']['results'].present? %>
+        <div><%= image_tag 'https://image.tmdb.org/t/p/w500' + movieinfo['table']['results'][0]['table']['poster_path'],class: "card-img-show" %></div>
+      <% elsif %>
+        <div class="no-card-img-show"><p>画像はありません</p></div> 
+      <%end%>
+    </div>
+    <div class="show-top-right">
+      <div class="show-movie-name">
+        <%= @movie.movie_name %>
+      </div>
+      <div class="movie-explanation">
+        <p class="explanation-title">＜ 概要 ＞</p>
+        <% if movieinfo['table']['results'].present? %>
+          <%= movieinfo['table']['results'][0]['table']['overview'] %>
+        <%elsif%>
+          <div class="no-movie-explanation"><p>概要はありません</p></div>
+        <%end%>
+      </div>
+      <div class="show-tags">
+        <div class="show-actor-tag">
+          <div class="show-tag-title">■出演者：</div>
+          <div  class="show-tag">
+            <%@movie.tag_maped_tags.each do |tag| %>
+              <span><%= tag.actor_tag %></span>
+            <% end %>
+          </div>
+        </div>
+        <div class="show-genre-tag">
+          <div class="show-tag-title">■ジャンル：</div>
+          <div  class="show-tag">
+            <%@movie.tag_maped_tags.each do |tag| %>
+              <span><%= tag.genre_tag %></span>
+            <% end %>
+          </div>
+        </div>
+        <div class="show-distribution-tag">
+          <div class="show-tag-title">■配信サイト：</div>
+          <div  class="show-tag">
+            <%@movie.tag_maped_tags.each do |tag| %>
+              <span><%= tag.distribution_site_tag %></span>
+            <% end %>
+          </div>
+        </div>
+        <div class="show-other-tag">
+          <div class="show-tag-title">■その他：</div>
+          <div  class="show-tag">
+            <%@movie.tag_maped_tags.each do |tag| %>
+              <span><%= tag.other_tag %></span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-
-<h3>いいね件数: <%= @movie.likes.count %></h3>
-<% if current_user.already_liked?(@movie) %>
-  <%= button_to 'いいねを取り消す', movie_like_path(@movie), method: :delete %>
-<% else %>
-  <%= button_to 'いいね', movie_likes_path(@movie) %>
-<% end %>
-
-
-
-<div class="comments">
-  <h4>＜goodコメント一覧＞</h4>
-  <% @good_comments.each do |comment| %>
-    <p>
-      <%# <%= comment.genre.name %>
-      <strong><%= comment.user.nickname %>：</strong>
-      <%= comment.text %>
-    </p>
-  <% end %>
-</div>
-<div class="comments">
-  <h4>＜badコメント一覧＞</h4>
-  <% @bad_comments.each do |comment| %>
-    <p>
-      <%# <%= comment.genre.name %> 
-      <strong><%= comment.user.nickname %>：</strong>
-      <%= comment.text %>
-    </p>
-  <% end %>
-</div>
-<div class="comments">
-  <h4>＜その他コメント一覧＞</h4>
-  <% @other_comments.each do |comment| %>
-    <p>
-      <%# <%= comment.genre.name %> 
-      <strong><%= comment.user.nickname %>：</strong>
-      <%= comment.text %>
-    </p>
-  <% end %>
-</div>
-
-
-
-
-
-
-
-<div class="container">
-    <% if user_signed_in? %>
-      <%= form_with(model: [@movie, @comment], local: true) do |form| %>
-        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
-        <%= form.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
-        <%= form.submit "SEND" %>
-      <% end %>
+  <div class="show-middle">
+    
+    <% if current_user.already_liked?(@movie) %>
+      <span><%= button_to 'いいね👍', movie_like_path(@movie), method: :delete, class: "good-btn" %></span>
     <% else %>
-      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+      <span><%= button_to 'いいね👍', movie_likes_path(@movie), class:"no-good-btn" %></span>
     <% end %>
- </div>
-
-<%= link_to 'トップページへ戻る', root_path %>
+    <div class="good-count">いいね:<%= @movie.likes.count %>件</div>
+  </div>  
+  <div>
+    <h2 class="comment-title">★コメントしよう！</h2>
+    <div class="all-comments">
+      <div class="comment-block-good">
+        <h4>＜goodコメント一覧＞</h4>
+        <% @good_comments.each do |comment| %>
+          <p>
+            <%# <%= comment.genre.name %>
+            <strong><%= comment.user.nickname %>：</strong>
+            <%= comment.text %>
+          </p>
+        <% end %>
+      </div>
+      <div class="comment-block-bad">
+        <h4>＜badコメント一覧＞</h4>
+        <% @bad_comments.each do |comment| %>
+          <p>
+            <%# <%= comment.genre.name %> 
+            <strong><%= comment.user.nickname %>：</strong>
+            <%= comment.text %>
+          </p>
+        <% end %>
+      </div>
+      <div class="comment-block-other">
+        <h4>＜その他コメント一覧＞</h4>
+        <% @other_comments.each do |comment| %>
+          <p>
+            <%# <%= comment.genre.name %> 
+            <strong><%= comment.user.nickname %>：</strong>
+            <%= comment.text %>
+          </p>
+        <% end %>
+      </div>
+      <div class="comment-block-form">
+        <h4>＜投稿フォーム＞</h4>
+        <% if user_signed_in? %>
+          <%= form_with(model: [@movie, @comment], local: true) do |form| %>
+            <div class="comment-in-box">
+              <%= form.text_area :text, placeholder: "コメントする", rows: "4",class: "comment-in" %>
+            </div>
+            <div class="comment-form-bottom">
+              <%= form.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
+              <%= form.submit "投稿", class:"comment-btn" %>
+            </div>
+            <p class="comment-caution">＊「good」、「bad」、「その他」から１つ選択して下さい</p>
+          <% end %>
+        <% else %>
+          <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <%= render "shared/second-footer" %>
+</div>

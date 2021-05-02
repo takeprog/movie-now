@@ -1,20 +1,30 @@
-<h1>
-  検索結果
-</h1>
-<% if @results != nil %>
-  <% @results.each do |result| %>
-    <td>
-    <br>
-    <li>
-      <%= link_to result.movie_name,  movie_path(result.id) %>
-      <% movieinfo = JSON.parse((Tmdb::Search.movie(result.movie_name)).to_json) %>
-      <% if movieinfo['table']['results'].present? %>
-        <p><%= image_tag 'https://image.tmdb.org/t/p/w500' + movieinfo['table']['results'][0]['table']['poster_path'],class: "card-img" %></p>
-      <%end%>
-    </li>
-  <% end %>
-<% else %>
-  該当する商品はありません
-<% end %>
-<br>
-<%= link_to 'トップページへ戻る', root_path %>
+<div class="second-header-block">
+  <%= render "shared/second-header" %>
+</div>
+<div class="search-room">
+  <div class="search-title-block">
+    <h1 class="search-title">検索結果</h1>
+  </div>
+  <div class="search-result">
+    <div class="search-result-movies">
+      <% unless @results.blank? %>
+      
+        <% @results.each do |result| %>
+          <div class="search-each-result">
+            <% movieinfo = JSON.parse((Tmdb::Search.movie(result.movie_name)).to_json) %>
+            <% if movieinfo['table']['results'].present? %>
+              <p><%= image_tag 'https://image.tmdb.org/t/p/w500' + movieinfo['table']['results'][0]['table']['poster_path'],class: "search-img" %></p>
+            <%end%>
+            <%= link_to result.movie_name,  movie_path(result.id), class: "search-movie-title" %>
+          </div>
+        <% end %>
+     
+      <% else %>
+        <div class="no-result"><p>該当する作品はありません</P></div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div>
+  <%= render "shared/second-footer" %>
+</div>

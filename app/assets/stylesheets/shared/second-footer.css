@@ -1,0 +1,8 @@
+.second-footer-block{
+  height:20vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding: 2vh 15vw;
+  color:white;
+}

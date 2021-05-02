@@ -1,0 +1,121 @@
+main{
+  width:100vw;
+  padding: 2vh 15vw;
+}
+.index-main-string{
+  color:white;
+  font-size:70px;
+  text-align: center;
+  padding:50px 0;
+  font-family: serif;
+  font-weight: bold;
+  font-style:italic;
+  /* text-shadow:10px 15px 0px black; */
+  text-shadow:1px 1px 0 #f00,-1px 1px 0 #f00,1px -1px 0 #f00,-1px -1px 0 #f00,10px 15px 0px black;
+
+}
+/* 新規追加作品 */
+.add-movies{
+  width:100%;
+  margin-top:2vw;
+}
+.add-movie-title, .ranking-title{
+  font-size:30px;
+  font-weight: bold;
+  margin-bottom:3px;
+}
+.add-movie-title{
+  background-color:white;
+  padding-left:20px;
+  margin-right:75%;
+}
+.add-movie-block{
+  display:flex;
+  justify-content:space-around;
+  background-color:white;
+  padding-top:15px;
+}
+.card-img{
+  border:rgb(75, 71, 71) solid 1px;
+  width:154px;
+  height:220px;
+}
+.no-image{
+  width:154px;
+  height:225px;
+  border:rgb(75, 71, 71) solid 2px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+/* ランキング */
+.ranking{
+  width:100%;
+  margin-top:3vw;
+}
+.ranking-title{
+  background-color:white;
+  padding-left:20px;
+  margin-right:78%;
+}
+.ranking-block{
+  display:flex;
+  justify-content:space-around;
+  background-color:white;
+}
+.ranking-num{
+  font-size:20px;
+  background-color:yellow;
+}
+/* 映画検索 */
+.movie-search{
+  width:100%;
+  margin-top:3vw;
+  padding-bottom:20px;
+  margin-bottom:30px;
+  padding-left:10px;
+  padding-right:10px;
+}
+.index-search-title{
+  font-size:50px;
+  font-weight: bold;
+  padding-left:20px;
+  margin-right:70%;
+  background-color:white;
+  margin-bottom:3px;
+}
+.tag-form-main{
+  background-color:white;
+  padding-bottom:20px;
+  padding-left:5px;
+  padding-right:5px;
+}
+.tag-block{
+  display:flex;
+}
+.tag-title{
+  width: 12%;
+  font-weight: bold;
+}
+.tag_list{
+  border:black solid 1px;
+}
+.tags{
+  width: 85%;
+  font-weight: bold;
+  color:rgb(14, 44, 113);
+  font-size:25px;
+}
+.search-btn-box{
+  text-align: center;
+  margin-top:20px;
+}
+.search-btn{
+  font-weight: bold;
+  width: 50%;
+  background: #ea352d;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+}

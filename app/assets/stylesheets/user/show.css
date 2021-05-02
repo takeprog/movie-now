@@ -1,0 +1,47 @@
+.user-myroom{
+  width:100vw;
+  padding: 2vh 15vw;
+}
+.user-myroom-title{
+  text-align: center;
+  margin-top:30px;
+  margin-bottom:30px;
+  font-size: 50px;
+  font-weight: bold;
+  background-color: white;
+  margin-right:10%;
+  margin-left:10%;
+}
+.myroom-good-title{
+  font-size: 30px;
+  font-weight: bold;
+  background-color: white;
+  margin-right:60%;
+}
+.myroom-good-lists{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-around;
+}
+.myroom-each-movie{
+  border:white solid 1px;
+  text-align: center;
+  margin-bottom:15px;
+  background-color: white;
+}
+.myroom-img{
+  width:304px;
+  height:440px;
+}
+.no-myroom-img{
+  width:304px;
+  height:440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.myroom-movie-title{
+  font-weight: bold;
+  font-size:25px;
+  color:blue;
+}

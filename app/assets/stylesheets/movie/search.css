@@ -1,0 +1,44 @@
+.search-room{
+  width:100vw;
+  padding: 2vh 15vw;
+}
+.search-title-block{
+  margin-top:30px;
+  margin-bottom:20px;
+}
+.search-title{
+  text-align: center;
+  margin:0 35%;
+  font-size: 50px;
+  background-color: white;
+}
+.search-result{
+  width:100%;
+  
+}
+.search-result-movies{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-around;
+}
+.search-each-result{
+  text-align: center;
+  background-color: white;
+  border:white solid 1px;
+}
+.search-img{
+  width:304px;
+  height:440px;
+}
+.no-result{
+  width:304px;
+  height:440px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-movie-title{
+  font-weight: bold;
+  font-size:30px;
+}

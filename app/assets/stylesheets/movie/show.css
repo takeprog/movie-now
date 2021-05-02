@@ -1,0 +1,142 @@
+.movie-show{
+  width:100vw;
+  padding: 2vh 15vw;
+  /* height:200vh; */
+}
+.show-top{
+  width:100%;
+  display:flex;
+  height:680px;
+}
+.show-top-left{
+  height:100%;
+  background-color: white;
+}
+.card-img-show{
+  width:462px;
+  height:675px;
+}
+.no-card-img-show{
+  width:462px;
+  height:675px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.show-top-right{
+  width:100%;
+  height:100%;
+  padding:0 20px;
+  background-color: white;
+}
+.show-movie-name{
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  width:100%;
+  height:20%; 
+  padding-top:40px;
+}
+.movie-explanation{
+  width:100%;
+  height:40%;
+  overflow:scroll;
+}
+.explanation-title{
+  font-size: 20px;
+  font-weight: bold;
+}
+.no-movie-explanation{
+  display: flex;
+  justify-content: center;
+}
+.show-tags{
+  width:100%;
+  height:40%;
+  overflow:scroll;
+}
+/* いいね欄 */
+.show-middle{
+  display: flex;
+  margin-left:60%;
+  padding-left:10%;
+  margin-top: 10px;
+  margin-bottom:20px;
+  background-color: white;
+}
+.no-good-btn{
+  background-color: white;
+  border-radius:15px;
+  font-size: 30px;
+}
+.good-btn{
+  background-color: rgb(237, 24, 24);
+  border-radius:15px;
+  font-size: 30px;
+}
+.good-count{
+  padding-left:10px;
+  padding-top:10px;
+  font-size: 20px;
+}
+/* コメント欄 */
+.all-comments{
+  width:100%;
+  display:flex;
+  flex-wrap:wrap;
+  background-color: white;
+  padding-top: 10px;
+}
+.comment-title{
+  font-size: 20px;
+  font-weight: bold;
+  background-color: white;
+  margin-right:75%;
+}
+.comment-block-good{
+  width:40%;
+  height: 15vw;
+  margin:0 5% 20px 5%;
+  border:rgb(231, 7, 7) solid 6px;
+}
+.comment-block-bad{
+  width:40%;
+  height: 15vw;
+  margin:0 5% 20px 5%;
+  border:rgb(15, 7, 231) solid 6px;
+}
+.comment-block-other{
+  width:40%;
+  height: 15vw;
+  margin:0 5% 20px 5%;
+  border:rgb(231, 227, 7) solid 6px;
+}
+.comment-block-form{
+  width:40%;
+  height: 15vw;
+  margin:0 5% 20px 5%;
+  border:rgb(8, 8, 8) solid 6px;
+}
+h4{
+  font-weight: bold;
+}
+.comment-in-box{
+  text-align: center;
+}
+.comment-in{
+  width:80%;
+}
+.comment-form-bottom{
+  text-align: center;
+}
+.comment-btn{
+  border-radius:8px;
+  font-size: 25px;
+}
+.comment-caution{
+  font-size:small;
+}
+
+.show-root-path{
+  
+}

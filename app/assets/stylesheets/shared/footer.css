@@ -1,0 +1,17 @@
+.main-footer-block{
+  height:20vh;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding: 2vh 15vw;
+  color:white;
+}
+.admin-btn-box{
+  margin-bottom:20px;
+  text-align: center;
+  width:100%;
+}
+.admin-link{
+  color:white;
+  
+}

@@ -6,7 +6,6 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
 
-  has_many :movies, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :liked_movies, through: :likes, source: :movie
   has_many :comments

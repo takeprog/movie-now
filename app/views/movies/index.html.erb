@@ -1,56 +1,79 @@
-<ul class='lists-right'>
-  <% if user_signed_in? %>
-    <li><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %></li>
-    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-  <% else %>
-    <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-    <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-  <% end %>
-</ul>
-<div>
-  <h1>新規追加作品</h1>
-    <% @add_movie.each do |movie| %>
-    <%= link_to movie.movie_name,  movie_path(movie.id) %>
-    <% movieinfo = JSON.parse((Tmdb::Search.movie(movie.movie_name)).to_json) %>
-      <% if movieinfo['table']['results'].present? %>
-        <p><%= image_tag 'https://image.tmdb.org/t/p/w92' + movieinfo['table']['results'][0]['table']['poster_path'],class: "card-img" %></p>
-      <%end%>
-  <% end %>
-</div>
-<div>
-  <h1>ランキング<h1>
-   <% @ranking.each do |movie| %>
-    <%= link_to movie.movie_name,  movie_path(movie.id) %>
-    <% movieinfo = JSON.parse((Tmdb::Search.movie(movie.movie_name)).to_json) %>
-      <% if movieinfo['table']['results'].present? %>
-        <p><%= image_tag 'https://image.tmdb.org/t/p/w92' + movieinfo['table']['results'][0]['table']['poster_path'],class: "card-img" %></p>
-      <%end%>
-  <% end %>
+<div class="header-image">
+  <%= render "shared/header" %>
 </div>
 
+<main class="index-main">
+  <div>
+    <h2 class="index-main-string">まさに今観たい映画に出会える</h2>
+  </div>
+  <div class="add-movies">
+    <h1 class="add-movie-title">新規追加作品 ＞</h1>
+    <div class="add-movie-block">
+      <% @add_movie.each do |movie| %>
+        <div class="add-movie-lists">         
+          <% movieinfo = JSON.parse((Tmdb::Search.movie(movie.movie_name)).to_json) %>
+          <% if movieinfo['table']['results'].present? %>
+            <p><%= image_tag 'https://image.tmdb.org/t/p/w154' + movieinfo['table']['results'][0]['table']['poster_path'],class: "card-img" %></p>
+          <% else %>
+            <div class="no-image">画像はありません</div>
+          <%end%>
+          <%= link_to movie.movie_name,  movie_path(movie.id) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="ranking">
+    <h1 class="ranking-title">ランキング ＞<h1>
+    <div class="ranking-block">
+      <% i=0 %>
+      <% @ranking.each do |movie| %>
+        <% i +=1 %>
+        <div class="ranking-lists">
+          <span class="ranking-num"><%= "#{i}位" %></span>
+          <% movieinfo = JSON.parse((Tmdb::Search.movie(movie.movie_name)).to_json) %>
+          <% if movieinfo['table']['results'].present? %>
+            <p><%= image_tag 'https://image.tmdb.org/t/p/w154' + movieinfo['table']['results'][0]['table']['poster_path'],class: "card-img" %></p>
+          <% else %>
+            <div class="no-image"><span>画像はありません</span></div> 
+          <%end%>
+          <%= link_to movie.movie_name,  movie_path(movie.id) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
+  <div class="movie-search">
+    <h1 class="index-search-title">
+      映画検索 ＞
+    </h1>
+    <div class="tag-form-main">
+      <p>＊１つ以上のタグを選択し、検索ボタンを押して下さい(全てのタグが含まれる映画が表示されます)</p>
+      <%= search_form_for @p, url: search_movies_path, id: "tag_form" do |f| %>
 
-<h1>
-  映画検索
-</h1>
-<%= search_form_for @p, url: search_movies_path do |f| %>
-  
-  <%= f.label :tag_maps_tag_id_eq, '出演者：' %>
-  <%= f.collection_check_boxes :having_all_tags_of, @actor_tags, :id, :actor_tag %>
-  <br>
-  <%= f.label :tag_maps_tag_id_eq, 'ジャンル：' %>
-  <%= f.collection_check_boxes :having_all_tags_of, @genre_tags, :id, :genre_tag %>
-  <br>
-  <%= f.label :tag_maps_tag_id_eq, '配信サイト：' %>
-  <%= f.collection_check_boxes :having_all_tags_of, @distribution_tags, :id, :distribution_site_tag %>
-  <br>
-  <%= f.label :tag_maps_tag_id_eq, 'その他：' %>
-  <%= f.collection_check_boxes :having_all_tags_of, @other_tags, :id, :other_tag %>
+        <div class="tag_list">
+          <div class="tag-block">
+          <p class="tag-title">■出演者</p>
+          <div class="tags"><%= f.collection_check_boxes :having_all_tags_of, @actor_tags, :id, :actor_tag %></div>
+          </div>
+          <div class="tag-block">
+          <p class="tag-title">■ジャンル</p>
+          <div class="tags"><%= f.collection_check_boxes :having_all_tags_of, @genre_tags, :id, :genre_tag %></div>
+          </div>
+          <div class="tag-block">
+          <p class="tag-title">■配信サイト</p>
+          <div class="tags"><%= f.collection_check_boxes :having_all_tags_of, @distribution_tags, :id, :distribution_site_tag %></div>
+          </div>
+          <div class="tag-block">
+          <p class="tag-title">■その他</p>
+          <div class="tags"class="tags"><%= f.collection_check_boxes :having_all_tags_of, @other_tags, :id, :other_tag %></div>
+          </div>
+        </div>
+        <div class="search-btn-box"><%= f.submit '検索開始', class: "search-btn" %></div>
+      <% end %>
+    <div>
+  </div>
+</main>
 
-  <br>
-  <%= f.submit '検索' %>
-<% end %>
-
-<% if user_signed_in? && current_user.admin? %>
-  <%= link_to '管理者画面', new_movie_path, class: "adminpage" %></li>
-<% end %>
+<div>
+  <%= render "shared/footer" %>
+</div>

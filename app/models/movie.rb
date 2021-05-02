@@ -1,11 +1,14 @@
 class Movie < ApplicationRecord
   has_many :tag_maps
   has_many :tags, through: :tag_maps
-  belongs_to :user
   has_many :likes
   has_many :liked_users, through: :likes, source: :user
   has_many :comments
+  has_many :tag_maped_tags, through: :tag_maps, source: :tag
 
+  validates :movie_name, presence: true
+
+  # タグ保存時コード
   def actor_tags_save(tag_list)
     if self.tags != nil
       movie_tags_records = TagMap.where(movie_id: self.id)
