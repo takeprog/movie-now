@@ -32,6 +32,9 @@
 .header-right{
   width:50%;
 }
+ul{
+ list-style-type: none;
+}
 
 .right-lists{
   display:flex;
