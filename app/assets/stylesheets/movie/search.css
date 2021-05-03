@@ -32,7 +32,7 @@
 }
 .no-search-img{
   width:304px;
-  height:440px;
+  height:460px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,4 +48,6 @@
 .search-movie-title{
   font-weight: bold;
   font-size:30px;
+  padding:0;
+  margin:0;
 }
