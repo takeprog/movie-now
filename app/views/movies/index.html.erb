@@ -13,7 +13,7 @@
         <div class="add-movie-lists">         
           <% movieinfo = JSON.parse((Tmdb::Search.movie(movie.movie_name)).to_json) %>
           <% if movieinfo['table']['results'].present? %>
-            <p><%= image_tag 'https://image.tmdb.org/t/p/w154' + movieinfo['table']['results'][0]['table']['poster_path'],class: "card-img" %></p>
+            <%= image_tag 'https://image.tmdb.org/t/p/w154' + movieinfo['table']['results'][0]['table']['poster_path'],class: "card-img" %>
           <% else %>
             <div class="no-image">画像はありません</div>
           <%end%>
@@ -32,7 +32,7 @@
           <span class="ranking-num"><%= "#{i}位" %></span>
           <% movieinfo = JSON.parse((Tmdb::Search.movie(movie.movie_name)).to_json) %>
           <% if movieinfo['table']['results'].present? %>
-            <p><%= image_tag 'https://image.tmdb.org/t/p/w154' + movieinfo['table']['results'][0]['table']['poster_path'],class: "card-img" %></p>
+            <%= image_tag 'https://image.tmdb.org/t/p/w154' + movieinfo['table']['results'][0]['table']['poster_path'],class: "card-img" %>
           <% else %>
             <div class="no-image"><span>画像はありません</span></div> 
           <%end%>
