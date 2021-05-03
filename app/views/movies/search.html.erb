@@ -15,7 +15,7 @@
             <% if movieinfo['table']['results'].present? %>
               <p><%= image_tag 'https://image.tmdb.org/t/p/w500' + movieinfo['table']['results'][0]['table']['poster_path'],class: "search-img" %></p>
             <% elsif %>
-              <p class="search-img">  
+              <div class="no-search-img"><p>画像はありません</p></div>  
             <%end%>
             <%= link_to result.movie_name,  movie_path(result.id), class: "search-movie-title" %>
           </div>

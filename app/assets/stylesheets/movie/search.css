@@ -30,6 +30,13 @@
   width:304px;
   height:440px;
 }
+.no-search-img{
+  width:304px;
+  height:440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .no-result{
   width:304px;
   height:440px;
