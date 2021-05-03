@@ -26,6 +26,9 @@
   background-color: white;
   border:white solid 1px;
 }
+.search-movie-img-box{
+  margin:0;
+}
 .search-img{
   width:304px;
   height:440px;
