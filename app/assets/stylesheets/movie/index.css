@@ -38,6 +38,10 @@ main{
 。add-movie-lists{
   margin:0;
 }
+.index-img-box{
+ margin:0;
+ padding:0;
+}
 .card-img{
   border:rgb(75, 71, 71) solid 1px;
   width:154px;
