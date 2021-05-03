@@ -35,10 +35,14 @@ main{
   background-color:white;
   padding-top:15px;
 }
+。add-movie-lists{
+  margin:0;
+}
 .card-img{
   border:rgb(75, 71, 71) solid 1px;
   width:154px;
   height:220px;
+  margin:0;
 }
 .no-image{
   width:154px;
@@ -47,6 +51,7 @@ main{
   text-align: center;
   display: table-cell;
   vertical-align: middle;
+  margin:0;
 }
 /* ランキング */
 .ranking{
