@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
   before_action :search_movie, only: [:index, :search]
   before_action :authenticate_user!, except: [:index, :search]
-  before_action :move_to_root,only: [:new, :create]
+  before_action :move_to_root,only: [:new, :create, :destroy]
   require 'themoviedb-api'
   Tmdb::Api.key(ENV["TMDB_API_KEY"])
   Tmdb::Api.language("ja")
@@ -49,6 +49,11 @@ class MoviesController < ApplicationController
     @good_comments = @movie.comments.where(genre_id: 2).includes(:user)
     @bad_comments = @movie.comments.where(genre_id: 3).includes(:user)
     @other_comments = @movie.comments.where(genre_id: 4).includes(:user)
+  end
+  def destroy
+    movie = Movie.find(params[:id])
+    movie.destroy
+    redirect_to root_path
   end
 
 

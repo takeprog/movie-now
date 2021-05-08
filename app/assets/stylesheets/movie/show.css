@@ -57,9 +57,30 @@
 }
 /* いいね欄 */
 .show-middle{
+  display:flex;
+  justify-content: flex-end;
+}
+.show-middle-left{
+  width:20%;
   display: flex;
-  margin-left:60%;
-  padding-left:10%;
+  align-items: center;
+  text-align: center;
+}
+.movie-delete{
+  width:100%;
+  background-color:white;
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom:20px;
+}
+.movie-delete-btn{
+  background-color: white;
+  border-radius:15px;
+}
+.shoe-middle-right{
+  display: flex;
+  width:25%;
+  justify-content: center;
   margin-top: 10px;
   margin-bottom:20px;
   background-color: white;

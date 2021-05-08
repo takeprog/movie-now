@@ -1,9 +1,9 @@
 class Movie < ApplicationRecord
-  has_many :tag_maps
+  has_many :tag_maps,dependent: :destroy
   has_many :tags, through: :tag_maps
-  has_many :likes
+  has_many :likes,dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
-  has_many :comments
+  has_many :comments,dependent: :destroy
   has_many :tag_maped_tags, through: :tag_maps, source: :tag
 
   validates :movie_name, presence: true
