@@ -115,6 +115,9 @@
   background-color: white;
   margin:0 75% 0 0;
 }
+.comment-block-name{
+  margin:0;
+}
 .comment-block-good{
   width:40%;
   height: 15vw;
