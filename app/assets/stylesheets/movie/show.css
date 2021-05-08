@@ -69,13 +69,14 @@
 .movie-delete{
   width:100%;
   background-color:white;
-  font-size: 30px;
+  
   margin-top: 10px;
   margin-bottom:20px;
 }
 .movie-delete-btn{
   background-color: white;
   border-radius:15px;
+  font-size: 30px;
 }
 .shoe-middle-right{
   display: flex;
@@ -112,7 +113,7 @@
   font-size: 20px;
   font-weight: bold;
   background-color: white;
-  margin-right:75%;
+  margin:0 75% 0 0;
 }
 .comment-block-good{
   width:40%;
