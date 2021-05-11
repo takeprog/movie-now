@@ -49,6 +49,9 @@ class MoviesController < ApplicationController
     @good_comments = @movie.comments.where(genre_id: 2).includes(:user)
     @bad_comments = @movie.comments.where(genre_id: 3).includes(:user)
     @other_comments = @movie.comments.where(genre_id: 4).includes(:user)
+    gon.movie=@movie
+
+    gon.user=current_user.nickname
   end
   def destroy
     movie = Movie.find(params[:id])

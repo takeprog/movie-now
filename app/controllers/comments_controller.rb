@@ -1,12 +1,9 @@
 class CommentsController < ApplicationController
   def create
     @movie = Movie.find(params[:movie_id])
-    @comment=Comment.new(comment_params)
-    if @comment.save
-      redirect_to  movie_path(@comment.movie.id)
-    else
-      render "movie/show"
-    end
+    @comment=Comment.create(comment_params)
+    comment=@comment
+    render json:{ comment: comment }
   end
 
   private

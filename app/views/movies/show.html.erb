@@ -82,7 +82,7 @@
   <div>
     <h2 class="comment-title">★コメントしよう！</h2>
     <div class="all-comments">
-      <div class="comment-block-good">
+      <div class="comment-block-good" id="comment-block-good">
         <h4 class="comment-block-name">＜goodコメント一覧＞</h4>
         <% @good_comments.each do |comment| %>
           <p>
@@ -91,7 +91,7 @@
           </p>
         <% end %>
       </div>
-      <div class="comment-block-bad">
+      <div class="comment-block-bad" id="comment-block-bad">
         <h4 class="comment-block-name">＜badコメント一覧＞</h4>
         <% @bad_comments.each do |comment| %>
           <p> 
@@ -100,7 +100,7 @@
           </p>
         <% end %>
       </div>
-      <div class="comment-block-other">
+      <div class="comment-block-other" id="comment-block-other">
         <h4 class="comment-block-name">＜その他コメント一覧＞</h4>
         <% @other_comments.each do |comment| %>
           <p> 
@@ -112,13 +112,13 @@
       <div class="comment-block-form">
         <h4 class="comment-block-name">＜投稿フォーム＞</h4>
         <% if user_signed_in? %>
-          <%= form_with(model: [@movie, @comment], local: true) do |form| %>
+          <%= form_with(model: [@movie, @comment], local: true, id: "comment-form") do |form| %>
             <div class="comment-in-box">
-              <%= form.text_area :text, placeholder: "コメントする", rows: "4",class: "comment-in" %>
+              <%= form.text_area :text, placeholder: "コメントする", rows: "4",class: "comment-in", id: "comment-in" %>
             </div>
             <div class="comment-form-bottom">
-              <%= form.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
-              <%= form.submit "投稿", class:"comment-btn" %>
+              <%= form.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select", id: "genre-select"}) %>
+              <%= form.submit "投稿", class:"comment-btn", id: "comment-submit" %>
             </div>
             <p class="comment-caution">＊「good」、「bad」、「その他」から１つ選択して下さい</p>
           <% end %>
