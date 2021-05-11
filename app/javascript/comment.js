@@ -22,9 +22,8 @@ function post (){
       const user=gon.user
       const item = XHR.response.comment;
       const html = `
-        <p> 
-          <strong> ${user}：</strong>
-          ${item.text}
+        <p class="name-comment"> 
+          ${user}： ${item.text}
         </p>`;
 
       if (item.genre_id==2) {

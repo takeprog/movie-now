@@ -85,8 +85,8 @@
       <div class="comment-block-good" id="comment-block-good">
         <h4 class="comment-block-name">＜goodコメント一覧＞</h4>
         <% @good_comments.each do |comment| %>
-          <p>
-            <strong><%= comment.user.nickname %>：</strong>
+          <p class="name-comment">
+            <%= comment.user.nickname %>：
             <%= comment.text %>
           </p>
         <% end %>
@@ -94,8 +94,8 @@
       <div class="comment-block-bad" id="comment-block-bad">
         <h4 class="comment-block-name">＜badコメント一覧＞</h4>
         <% @bad_comments.each do |comment| %>
-          <p> 
-            <strong><%= comment.user.nickname %>：</strong>
+          <p class="name-comment"> 
+            <%= comment.user.nickname %>：
             <%= comment.text %>
           </p>
         <% end %>
@@ -103,8 +103,8 @@
       <div class="comment-block-other" id="comment-block-other">
         <h4 class="comment-block-name">＜その他コメント一覧＞</h4>
         <% @other_comments.each do |comment| %>
-          <p> 
-            <strong><%= comment.user.nickname %>：</strong>
+          <p class="name-comment"> 
+            <%= comment.user.nickname %>：
             <%= comment.text %>
           </p>
         <% end %>
