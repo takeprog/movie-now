@@ -71,9 +71,8 @@
  ## トップページ概要
  [![Image from Gyazo](https://i.gyazo.com/1d076c5f206002c29ff478892e1ee56d.gif)](https://gyazo.com/1d076c5f206002c29ff478892e1ee56d)
 
-[![Image from Gyazo](https://i.gyazo.com/3de15b89b9e40ca4de87be8c676e6fe2.gif)](https://gyazo.com/3de15b89b9e40ca4de87be8c676e6fe2)
 
- <img src="https://i.gyazo.com/1d076c5f206002c29ff478892e1ee56d.gif" width="100">
+ [![Image from Gyazo](https://i.gyazo.com/2faf5cd96bae73ef45aa8e5b3aa88e71.gif)](https://gyazo.com/2faf5cd96bae73ef45aa8e5b3aa88e71)
 - ログアウト時、ヘッダーにはログイン、新規登録のリンクが表示されます。ログイン時はマイページ、ログアウトのリンクが表示されます
 - ヘッダーには管理者IDでログインしているときのみ管理者リンクが表示されます
 - 各ページの映画画像はAPIを使用し、映画名から検索しています
