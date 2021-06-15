@@ -93,6 +93,8 @@
 
  ## いいね機能、コメント機能
  [![Image from Gyazo](https://i.gyazo.com/11e6036a0bd43bbbebe9161eee1e022e.gif)](https://gyazo.com/11e6036a0bd43bbbebe9161eee1e022e)
+
+ [![Image from Gyazo](https://i.gyazo.com/11e6036a0bd43bbbebe9161eee1e022e.gif)](https://gyazo.com/11e6036a0bd43bbbebe9161eee1e022e)
  - ログインしているユーザーのみ詳細ページに移動することが出来ます
  - 映画詳細ページに記載されている映画概要はAPIを使用し、映画名から検索しています
  - 管理者IDでログインして映画詳細ページに移動した時のみ削除ボタンが表示されます
