@@ -69,7 +69,7 @@
 
 # 実装内容
  ## トップページ概要
- [![Image from Gyazo](https://i.gyazo.com/dea3312c72345184adbad46c5a3bb79f.gif)](https://gyazo.com/dea3312c72345184adbad46c5a3bb79f)
+ [![Image from Gyazo](https://i.gyazo.com/1d076c5f206002c29ff478892e1ee56d.gif)](https://gyazo.com/1d076c5f206002c29ff478892e1ee56d)
 - ログアウト時、ヘッダーにはログイン、新規登録のリンクが表示されます。ログイン時はマイページ、ログアウトのリンクが表示されます
 - ヘッダーには管理者IDでログインしているときのみ管理者リンクが表示されます
 - 各ページの映画画像はAPIを使用し、映画名から検索しています
@@ -77,14 +77,14 @@
  
 
  ## タグ検索機能
- [![Image from Gyazo](https://i.gyazo.com/0a4c2cd46296344c4bd31ba4aa26ae8c.gif)](https://gyazo.com/0a4c2cd46296344c4bd31ba4aa26ae8c)
+ [![Image from Gyazo](https://i.gyazo.com/dafc529a16091cff59f522ba4efaa152.gif)](https://gyazo.com/dafc529a16091cff59f522ba4efaa152)
 - タグは項目毎に分けて表示されています
 - タグ選択欄から項目に関係なく複数選ぶことが出来ます
 - 検索ボタンを押すと全ての条件が該当する検索結果が表示されます
 - トップページと検索結果画面のみログアウト状態で使用可能です
 
  ## 映画追加機能（管理者のみ使用可能）
- [![Image from Gyazo](https://i.gyazo.com/6570b208675aa27985c9edb0bfcc1880.gif)](https://gyazo.com/6570b208675aa27985c9edb0bfcc1880)
+ [![Image from Gyazo](https://i.gyazo.com/ffce01d8344c3f4b5633b6703c6c3296.gif)](https://gyazo.com/ffce01d8344c3f4b5633b6703c6c3296)
  - 管理者IDでログイン時にトップページのヘッダーに管理者リンクが表示されます
  - 管理者以外のユーザーがURLを入力し直接映画追加ページに移動しようとすると、トップページに移動します
  - 映画名入力は必須で、 タグに関しては各項目空欄または複数入力することが出来ます
@@ -108,7 +108,7 @@
 - 投稿された内容は投稿ジャンル毎に分けて表示されます      
 
  ## マイページ、ランキング、新規追加映画一覧
- [![Image from Gyazo](https://i.gyazo.com/7e170de80e4d447ac6ca464030facf68.gif)](https://gyazo.com/7e170de80e4d447ac6ca464030facf68)
+ [![Image from Gyazo](https://i.gyazo.com/e09d88499ba6c4b0e31a99758fb3765a.gif)](https://gyazo.com/e09d88499ba6c4b0e31a99758fb3765a)
 ### マイページ
 - ログインしているユーザーとマイページのユーザーが一致するときのみ表示されます
 - URLを入力し他のユーザーのページに直接移動しようとするとトップページに移動します
