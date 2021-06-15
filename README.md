@@ -72,7 +72,7 @@
  [![Image from Gyazo](https://i.gyazo.com/1d076c5f206002c29ff478892e1ee56d.gif)](https://gyazo.com/1d076c5f206002c29ff478892e1ee56d)
 
 
- [![Image from Gyazo](https://i.gyazo.com/2faf5cd96bae73ef45aa8e5b3aa88e71.gif)](https://gyazo.com/2faf5cd96bae73ef45aa8e5b3aa88e71)
+ [![Image from Gyazo](https://i.gyazo.com/f06d335e79970428e3d9a52d679e2912.gif)](https://gyazo.com/f06d335e79970428e3d9a52d679e2912)
 - ログアウト時、ヘッダーにはログイン、新規登録のリンクが表示されます。ログイン時はマイページ、ログアウトのリンクが表示されます
 - ヘッダーには管理者IDでログインしているときのみ管理者リンクが表示されます
 - 各ページの映画画像はAPIを使用し、映画名から検索しています
