@@ -76,14 +76,14 @@
 - APIで該当作品がなかった場合は「画像はありません」と表示されます
  
  ## タグ検索機能
-[![Image from Gyazo](https://i.gyazo.com/7d4fe83c2cc84a2527c7c3ec29a13bfd.gif)](https://gyazo.com/7d4fe83c2cc84a2527c7c3ec29a13bfd)
+[![Image from Gyazo](https://i.gyazo.com/9f31324b9a17c5bfbcee256eaef370e4.gif)](https://gyazo.com/9f31324b9a17c5bfbcee256eaef370e4)
 - タグは項目毎に分けて表示されています
 - タグ選択欄から項目に関係なく複数選ぶことが出来ます
 - 検索ボタンを押すと全ての条件が該当する検索結果が表示されます
 - トップページと検索結果画面のみログアウト状態で使用可能です
 
  ## 映画追加機能（管理者のみ使用可能）
-[![Image from Gyazo](https://i.gyazo.com/8bc069f922e0e13c9d381bba8c79c420.gif)](https://gyazo.com/8bc069f922e0e13c9d381bba8c79c420)
+[![Image from Gyazo](https://i.gyazo.com/35cbae25c6a132ef53aed809c9bea6b0.gif)](https://gyazo.com/35cbae25c6a132ef53aed809c9bea6b0)
  - 管理者IDでログイン時にトップページのヘッダーに管理者リンクが表示されます
  - 管理者以外のユーザーがURLを入力し直接映画追加ページに移動しようとすると、トップページに移動します
  - 映画名入力は必須で、 タグに関しては各項目空欄または複数入力することが出来ます
