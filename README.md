@@ -83,7 +83,7 @@
 - トップページと検索結果画面のみログアウト状態で使用可能です
 
  ## 映画追加機能（管理者のみ使用可能）
-[![Image from Gyazo](https://i.gyazo.com/6811dec561c0b0b007baac36b45076ac.gif)](https://gyazo.com/6811dec561c0b0b007baac36b45076ac)
+[![Image from Gyazo](https://i.gyazo.com/4d87d60c60f7eca84ffac4346f9ed525.gif)](https://gyazo.com/4d87d60c60f7eca84ffac4346f9ed525)
  - 管理者IDでログイン時にトップページのヘッダーに管理者リンクが表示されます
  - 管理者以外のユーザーがURLを入力し直接映画追加ページに移動しようとすると、トップページに移動します
  - 映画名入力は必須で、 タグに関しては各項目空欄または複数入力することが出来ます
