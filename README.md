@@ -71,6 +71,7 @@
  ## トップページ概要
  [![Image from Gyazo](https://i.gyazo.com/1d076c5f206002c29ff478892e1ee56d.gif)](https://gyazo.com/1d076c5f206002c29ff478892e1ee56d)
 
+[![Image from Gyazo](https://i.gyazo.com/3de15b89b9e40ca4de87be8c676e6fe2.gif)](https://gyazo.com/3de15b89b9e40ca4de87be8c676e6fe2)
 
  <img src="https://i.gyazo.com/1d076c5f206002c29ff478892e1ee56d.gif" width="100">
 - ログアウト時、ヘッダーにはログイン、新規登録のリンクが表示されます。ログイン時はマイページ、ログアウトのリンクが表示されます
