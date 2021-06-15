@@ -69,26 +69,21 @@
 
 # 実装内容
  ## トップページ概要
- [![Image from Gyazo](https://i.gyazo.com/1d076c5f206002c29ff478892e1ee56d.gif)](https://gyazo.com/1d076c5f206002c29ff478892e1ee56d)
-
-
- [![Image from Gyazo](https://i.gyazo.com/f06d335e79970428e3d9a52d679e2912.gif)](https://gyazo.com/f06d335e79970428e3d9a52d679e2912)
+[![Image from Gyazo](https://i.gyazo.com/f06d335e79970428e3d9a52d679e2912.gif)](https://gyazo.com/f06d335e79970428e3d9a52d679e2912)
 - ログアウト時、ヘッダーにはログイン、新規登録のリンクが表示されます。ログイン時はマイページ、ログアウトのリンクが表示されます
 - ヘッダーには管理者IDでログインしているときのみ管理者リンクが表示されます
 - 各ページの映画画像はAPIを使用し、映画名から検索しています
 - APIで該当作品がなかった場合は「画像はありません」と表示されます
  
-
  ## タグ検索機能
- [![Image from Gyazo](https://i.gyazo.com/dafc529a16091cff59f522ba4efaa152.gif)](https://gyazo.com/dafc529a16091cff59f522ba4efaa152)
+[![Image from Gyazo](https://i.gyazo.com/7d4fe83c2cc84a2527c7c3ec29a13bfd.gif)](https://gyazo.com/7d4fe83c2cc84a2527c7c3ec29a13bfd)
 - タグは項目毎に分けて表示されています
 - タグ選択欄から項目に関係なく複数選ぶことが出来ます
 - 検索ボタンを押すと全ての条件が該当する検索結果が表示されます
 - トップページと検索結果画面のみログアウト状態で使用可能です
 
  ## 映画追加機能（管理者のみ使用可能）
- [![Image from Gyazo1](https://i.gyazo.com/ffce01d8344c3f4b5633b6703c6c3296.gif)](https://gyazo.com/ffce01d8344c3f4b5633b6703c6c3296)
- 
+[![Image from Gyazo](https://i.gyazo.com/8bc069f922e0e13c9d381bba8c79c420.gif)](https://gyazo.com/8bc069f922e0e13c9d381bba8c79c420)
  - 管理者IDでログイン時にトップページのヘッダーに管理者リンクが表示されます
  - 管理者以外のユーザーがURLを入力し直接映画追加ページに移動しようとすると、トップページに移動します
  - 映画名入力は必須で、 タグに関しては各項目空欄または複数入力することが出来ます
@@ -96,10 +91,7 @@
  - タグは1度の送信で項目関係なく全て別のレコードに保存されます
 
  ## いいね機能、コメント機能
- [![Image from Gyazo](https://i.gyazo.com/11e6036a0bd43bbbebe9161eee1e022e.gif)](https://gyazo.com/11e6036a0bd43bbbebe9161eee1e022e)
- 
-
- <img src="https://i.gyazo.com/11e6036a0bd43bbbebe9161eee1e022e.gif" width="100">
+[![Image from Gyazo](https://i.gyazo.com/11e6036a0bd43bbbebe9161eee1e022e.gif)](https://gyazo.com/11e6036a0bd43bbbebe9161eee1e022e)
  - ログインしているユーザーのみ詳細ページに移動することが出来ます
  - 映画詳細ページに記載されている映画概要はAPIを使用し、映画名から検索しています
  - 管理者IDでログインして映画詳細ページに移動した時のみ削除ボタンが表示されます
@@ -115,7 +107,8 @@
 - 投稿された内容は投稿ジャンル毎に分けて表示されます      
 
  ## マイページ、ランキング、新規追加映画一覧
- [![Image from Gyazo](https://i.gyazo.com/e09d88499ba6c4b0e31a99758fb3765a.gif)](https://gyazo.com/e09d88499ba6c4b0e31a99758fb3765a)
+[![Image from Gyazo](https://i.gyazo.com/e887cc75cec61bd7ab28f743ddbaba9f.gif)](https://gyazo.com/e887cc75cec61bd7ab28f743ddbaba9f)
+[![Image from Gyazo](https://i.gyazo.com/2dae7e7d404d3a0ac55b36a13ac4017a.gif)](https://gyazo.com/2dae7e7d404d3a0ac55b36a13ac4017a)
 ### マイページ
 - ログインしているユーザーとマイページのユーザーが一致するときのみ表示されます
 - URLを入力し他のユーザーのページに直接移動しようとするとトップページに移動します
