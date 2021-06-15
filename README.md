@@ -84,7 +84,8 @@
 - トップページと検索結果画面のみログアウト状態で使用可能です
 
  ## 映画追加機能（管理者のみ使用可能）
- [![Image from Gyazo](https://i.gyazo.com/ffce01d8344c3f4b5633b6703c6c3296.gif)](https://gyazo.com/ffce01d8344c3f4b5633b6703c6c3296)
+ [![Image from Gyazo1](https://i.gyazo.com/ffce01d8344c3f4b5633b6703c6c3296.gif)](https://gyazo.com/ffce01d8344c3f4b5633b6703c6c3296)
+ 
  - 管理者IDでログイン時にトップページのヘッダーに管理者リンクが表示されます
  - 管理者以外のユーザーがURLを入力し直接映画追加ページに移動しようとすると、トップページに移動します
  - 映画名入力は必須で、 タグに関しては各項目空欄または複数入力することが出来ます
@@ -93,8 +94,7 @@
 
  ## いいね機能、コメント機能
  [![Image from Gyazo](https://i.gyazo.com/11e6036a0bd43bbbebe9161eee1e022e.gif)](https://gyazo.com/11e6036a0bd43bbbebe9161eee1e022e)
-
- [![Image from Gyazo](https://i.gyazo.com/11e6036a0bd43bbbebe9161eee1e022e.gif)](https://gyazo.com/11e6036a0bd43bbbebe9161eee1e022e)
+ 
  - ログインしているユーザーのみ詳細ページに移動することが出来ます
  - 映画詳細ページに記載されている映画概要はAPIを使用し、映画名から検索しています
  - 管理者IDでログインして映画詳細ページに移動した時のみ削除ボタンが表示されます
