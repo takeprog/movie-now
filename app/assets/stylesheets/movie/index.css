@@ -99,6 +99,9 @@ main{
   padding-left:5px;
   padding-right:5px;
 }
+.search-explanation{
+  margin:0;
+}
 .tag-block{
   display:flex;
 }
