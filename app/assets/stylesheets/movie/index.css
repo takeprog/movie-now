@@ -32,6 +32,7 @@ main{
   justify-content:space-around;
   background-color:white;
   padding-top:15px;
+  overflow: auto;
 }
 。add-movie-lists{
   margin:0;
@@ -68,6 +69,7 @@ main{
   display:flex;
   justify-content:space-around;
   background-color:white;
+  overflow: auto;
 }
 .ranking-num{
   font-size:20px;
@@ -108,6 +110,8 @@ main{
 }
 .tag_list{
   border:black solid 1px;
+  overflow: auto;
+  height: 70vh;
 }
 .tags{
   width: 85%;
