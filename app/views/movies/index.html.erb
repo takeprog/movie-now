@@ -7,7 +7,7 @@
     <h2 class="index-main-string">まさに今観たい映画に出会える</h2>
   </div>
   <div class="add-movies">
-    <h1 class="add-movie-title">新規追加作品 ＞</h1>
+    <h1 class="add-movie-title"><span class="add-movie-title-in">新規追加作品 ＞</span></h1>
     <div class="add-movie-block">
       <% @add_movie.each do |movie| %>
         <div class="add-movie-lists">         
@@ -23,7 +23,7 @@
     </div>
   </div>
   <div class="ranking">
-    <h1 class="ranking-title">ランキング ＞</h1>
+    <h1 class="ranking-title"><span class="ranking-title-in">ランキング ＞</span></h1>
     <div class="ranking-block">
       <% i=0 %>
       <% @ranking.each do |movie| %>
@@ -45,7 +45,7 @@
 
   <div class="movie-search">
     <h1 class="index-search-title">
-      映画検索 ＞
+      <span class="index-search-title-in">映画検索 ＞</span>
     </h1>
     <div class="tag-form-main">
       <p>＊１つ以上のタグを選択し、検索ボタンを押して下さい(全てのタグが含まれる映画が表示されます)</p>

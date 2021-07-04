@@ -1,5 +1,4 @@
 main{
-  width:100vw;
   padding: 2vh 15vw;
 }
 .index-main-string{
@@ -24,10 +23,9 @@ main{
   font-weight: bold;
   margin-bottom:3px;
 }
-.add-movie-title{
+.add-movie-title-in{
   background-color:white;
-  padding-left:20px;
-  margin-right:75%;
+  padding: 8px;
 }
 .add-movie-block{
   display:flex;
@@ -62,10 +60,9 @@ main{
   width:100%;
   margin-top:3vw;
 }
-.ranking-title{
+.ranking-title-in{
   background-color:white;
-  padding-left:20px;
-  margin-right:78%;
+  padding: 8px;
 }
 .ranking-block{
   display:flex;
@@ -88,10 +85,13 @@ main{
 .index-search-title{
   font-size:50px;
   font-weight: bold;
-  padding-left:20px;
-  margin-right:70%;
+  /* padding-left:20px; */
+  /* margin-right:70%; */
+  /* margin-bottom:3px; */
+}
+.index-search-title-in{
   background-color:white;
-  margin-bottom:3px;
+  padding: 8px;
 }
 .tag-form-main{
   background-color:white;
